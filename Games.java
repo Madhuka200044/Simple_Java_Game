@@ -1,12 +1,15 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Games {
-    public static void main(String[] args) {
+public class Games 
+{
+    public static void main(String[] args) 
+    {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
-        while (!exit) {
+        while (!exit) 
+        {
             System.out.println("\nWelcome to the Simple Games!");
             System.out.println("Choose a game to play:");
             System.out.println("1. Guess the Number");
@@ -36,7 +39,34 @@ public class Games {
     }
 
     // Guess the Number Game
-   
+    public static void playGuessTheNumber() 
+    {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int numberToGuess = random.nextInt(100) + 1; // Random number between 1 and 100
+        int numberOfTries = 0;
+        int guess;
+        boolean hasGuessedCorrectly = false;
+
+        System.out.println("\nWelcome to Guess the Number!");
+        System.out.println("I have selected a number between 1 and 100. Can you guess what it is?");
+
+        while (!hasGuessedCorrectly) {
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
+            numberOfTries++;
+
+            if (guess < numberToGuess) {
+                System.out.println("Too low! Try again.");
+            } else if (guess > numberToGuess) {
+                System.out.println("Too high! Try again.");
+            } else {
+                hasGuessedCorrectly = true;
+                System.out.println("Congratulations! You've guessed the number in " + numberOfTries + " tries.");
+            }
+        }
+    }
 
     // Rock, Paper, Scissors Game
     public static void playRockPaperScissors() {
