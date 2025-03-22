@@ -19,7 +19,8 @@ public class Games
 
             int gameChoice = scanner.nextInt();
 
-            switch (gameChoice) {
+            switch (gameChoice) 
+            {
                 case 1:
                     playGuessTheNumber();
                     break;
@@ -57,11 +58,16 @@ public class Games
             guess = scanner.nextInt();
             numberOfTries++;
 
-            if (guess < numberToGuess) {
+            if (guess < numberToGuess) 
+            {
                 System.out.println("Too low! Try again.");
-            } else if (guess > numberToGuess) {
+            } 
+            else if (guess > numberToGuess) 
+            {
                 System.out.println("Too high! Try again.");
-            } else {
+            } 
+            else 
+            {
                 hasGuessedCorrectly = true;
                 System.out.println("Congratulations! You've guessed the number in " + numberOfTries + " tries.");
             }
@@ -69,7 +75,8 @@ public class Games
     }
 
     // Rock, Paper, Scissors Game
-    public static void playRockPaperScissors() {
+    public static void playRockPaperScissors() 
+    {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -86,18 +93,22 @@ public class Games
         // Determine the winner
         if (playerChoice == computerChoice) {
             System.out.println("It's a tie!");
-        } else if ((playerChoice == 1 && computerChoice == 3) ||
-                   (playerChoice == 2 && computerChoice == 1) ||
-                   (playerChoice == 3 && computerChoice == 2)) {
+        } 
+        else if ((playerChoice == 1 && computerChoice == 3) ||(playerChoice == 2 && computerChoice == 1) ||(playerChoice == 3 && computerChoice == 2))           
+        {
             System.out.println("You win!");
-        } else {
+        } 
+        else 
+        {
             System.out.println("Computer wins!");
         }
     }
 
     // Helper method to convert choice number to name
-    public static String getChoiceName(int choice) {
-        switch (choice) {
+    public static String getChoiceName(int choice) 
+    {
+        switch (choice) 
+        {
             case 1: return "Rock";
             case 2: return "Paper";
             case 3: return "Scissors";
